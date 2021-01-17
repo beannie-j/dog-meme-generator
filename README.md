@@ -22,7 +22,7 @@ These instructions will get a copy of the project up and running on your local m
 
 ### Prerequisites
 
-You should have (pip)[https://pip.pypa.io/en/stable/installing/] installed.
+You should have [pip](https://pip.pypa.io/en/stable/installing/) installed.
 
 ### Installation
 
