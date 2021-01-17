@@ -22,11 +22,12 @@ These instructions will get a copy of the project up and running on your local m
 
 ### Prerequisites
 
-TBC
+You should have (pip)[https://pip.pypa.io/en/stable/installing/] installed.
 
 ### Installation
 
-TBC
+First install the dependencies by running `pip install -r requirements.txt`. Then you can follow the below instructions depending on the type of your terminal.
+
 Bash
 
 ```
