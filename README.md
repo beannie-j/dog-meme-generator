@@ -1,6 +1,6 @@
 # Silly Dog Meme Generator
 
-This is a silly dog meme generator written with Python and Flask(https://flask.palletsprojects.com/en/1.1.x/) Web Application framework.
+This is a silly dog meme generator written with Python and [Flask](https://flask.palletsprojects.com/en/1.1.x/) Web Application framework.
 
 ## Demo
 
