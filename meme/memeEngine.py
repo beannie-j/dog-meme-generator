@@ -19,7 +19,7 @@ class MemeEngine:
         resized_img = img.resize((int(scale_x * width), int(scale_y * height)))
 
         fnt = ImageFont.truetype(
-            "./resource/fonts/CircularStd-Book.ttf", size=20)
+            "./resource/fonts/CircularStd-Book.woff", size=20)
 
         # drawing context
         d = ImageDraw.Draw(resized_img)
@@ -27,6 +27,6 @@ class MemeEngine:
             (10, 10), f"{text} - {author}", font=fnt, fill=(0, 0, 0, 0))
 
         out = os.path.join(self.path, f"meme-{self.id}.jpg")
-        id += 1
+        self.id += 1
         resized_img.save(out, 'JPEG')
         return out

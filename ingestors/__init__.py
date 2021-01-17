@@ -1,3 +1,4 @@
+import os
 from typing import List
 from ingestors.ingestorInterface import IngestorInterface
 from ingestors.csvIngestor import CSVIngestor
@@ -8,10 +9,19 @@ from models.quoteModel import QuoteModel
 
 
 class Ingestor(IngestorInterface):
-    ingestors = {DocxIngestor, CSVIngestor, PDFIngestor, TextIngestor}
+    file_extensions = {'.txt', '.csv', '.pdf', '.docx'}
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        for ingestor in cls.ingestors:
-            if ingestor.can_ingest(path):
-                return ingestor.parse(path)
+        filename, extension = os.path.splitext(path)
+        print(filename, "ext", extension)
+        if extension not in cls.file_extensions:
+            raise ValueError(f"ValueError: {extension} is not supported.")
+        if extension == '.txt':
+            return TextIngestor.parse(path)
+        if extension == '.docx':
+            return DocxIngestor.parse(path)
+        if extension == '.pdf':
+            return PDFIngestor.parse(path)
+        if extension == '.csv':
+            return CSVIngestor.parse(path)

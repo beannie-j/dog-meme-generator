@@ -27,12 +27,28 @@ TBC
 ### Installation
 
 TBC
-
-On PowerShell
+Bash
 
 ```
-$env:FLASK_APP = "hello.py"
-python -m flask run
+$ export FLASK_APP=hello.py
+$ flask run
+ * Running on http://127.0.0.1:5000/
+```
+
+CMD
+
+```
+> set FLASK_APP=hello.py
+> flask run
+ * Running on http://127.0.0.1:5000/
+```
+
+PowerShell
+
+```
+> $env:FLASK_APP = "hello.py"
+> flask run
+ * Running on http://127.0.0.1:5000/
 ```
 
 ## Contributing

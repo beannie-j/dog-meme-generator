@@ -9,13 +9,11 @@ class CSVIngestor(IngestorInterface):
     def parse(cls, path: str) -> List[QuoteModel]:
         res = []
         with open(path) as csv_file:
-            csv_reader = csv.reader(csv_file, delimiter=',')
+            csv_reader = csv.DictReader(csv_file)
             line_count = 0
             for row in csv_reader:
                 if line_count == 0:
+                    print(f'Column names are {", ".join(row)}')
                     line_count += 1
-                    continue
-                else:
-                    res.append(QuoteModel(row.rstrip('\n').split(' - ')))
-                    line_count += 1
+                res.append(QuoteModel(row['body'], row['author']))
             return res

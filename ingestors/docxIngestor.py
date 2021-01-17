@@ -11,7 +11,6 @@ class DocxIngestor(IngestorInterface):
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
         res = []
-        print(path)
         document = Document(path)
         for paragraph in document.paragraphs:
             paragraph.text and res.append(

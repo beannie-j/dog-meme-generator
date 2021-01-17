@@ -16,10 +16,15 @@ meme = MemeEngine('./static')
 def setup():
     """ Load all resources """
 
-    quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
-                   './_data/DogQuotes/DogQuotesDOCX.docx',
-                   './_data/DogQuotes/DogQuotesPDF.pdf',
-                   './_data/DogQuotes/DogQuotesCSV.csv']
+    # quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
+    #                './_data/DogQuotes/DogQuotesDOCX.docx',
+    #                './_data/DogQuotes/DogQuotesPDF.pdf',
+    #                './_data/DogQuotes/DogQuotesCSV.csv']
+
+    quote_files = [
+        './_data/DogQuotes/DogQuotesDOCX.docx',
+        './_data/DogQuotes/DogQuotesCSV.csv']
+
     quotes = []
     for file in quote_files:
         try:
@@ -43,6 +48,7 @@ quotes, imgs = setup()
 def meme_rand():
     img = random.choice(imgs)
     quote = random.choice(quotes)
+    print(quote)
     path = meme.make_meme(img, quote.body, quote.author)
     return render_template('meme.html', path=path)
 
