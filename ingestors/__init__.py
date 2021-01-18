@@ -14,7 +14,6 @@ class Ingestor(IngestorInterface):
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
         filename, extension = os.path.splitext(path)
-        print(filename, "ext", extension)
         if extension not in cls.file_extensions:
             raise ValueError(f"ValueError: {extension} is not supported.")
         if extension == '.txt':

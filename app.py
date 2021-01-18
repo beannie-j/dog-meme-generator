@@ -48,8 +48,9 @@ quotes, imgs = setup()
 def meme_rand():
     img = random.choice(imgs)
     quote = random.choice(quotes)
-    print(quote)
+    print("generated", quote.body, quote.author)
     path = meme.make_meme(img, quote.body, quote.author)
+    print("path", path)
     return render_template('meme.html', path=path)
 
 
@@ -64,11 +65,6 @@ def meme_post():
     """ Create a user defined meme """
 
     # @TODO:
-    # 1. Use requests to save the image from the image_url
-    #    form param to a temp local file.
-    # 2. Use the meme object to generate a meme using this temp
-    #    file and the body and author form paramaters.
-    # 3. Remove the temporary saved image.
 
     path = None
 

@@ -12,6 +12,11 @@ class MemeEngine:
             os.makedirs(path)
 
     def make_meme(self, img_path, text, author, scale=500) -> str:
+        print("makememe", text, author)
+
+        out = os.path.join(self.path, f"meme-{self.id}.jpg").replace("\\", "/")
+        self.id += 1
+
         img = Image.open(img_path)
         width, height = img.width, img.height
         scale_x = scale // width
@@ -26,7 +31,5 @@ class MemeEngine:
         d.multiline_text(
             (10, 10), f"{text} - {author}", font=fnt, fill=(0, 0, 0, 0))
 
-        out = os.path.join(self.path, f"meme-{self.id}.jpg")
-        self.id += 1
         resized_img.save(out, 'JPEG')
         return out

@@ -13,6 +13,7 @@ class DocxIngestor(IngestorInterface):
         res = []
         document = Document(path)
         for paragraph in document.paragraphs:
-            paragraph.text and res.append(
-                QuoteModel(paragraph.text.split(" - ")))
+            if paragraph.text:
+                body, author = paragraph.text.split(" - ")
+                res.append(QuoteModel(body, author))
         return res
