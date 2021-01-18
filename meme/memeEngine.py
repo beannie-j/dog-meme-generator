@@ -12,7 +12,7 @@ class MemeEngine:
             os.makedirs(path)
 
     def make_meme(self, img_path, text, author, scale=500) -> str:
-        print("makememe", text, author)
+        print("make meme", text, author)
 
         out = os.path.join(self.path, f"meme-{self.id}.jpg").replace("\\", "/")
         self.id += 1

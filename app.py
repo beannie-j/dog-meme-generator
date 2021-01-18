@@ -14,8 +14,7 @@ meme = MemeEngine('./static')
 
 
 def setup():
-    """ Load all resources """
-
+    # @TODO: need to fix txt and pdf
     # quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
     #                './_data/DogQuotes/DogQuotesDOCX.docx',
     #                './_data/DogQuotes/DogQuotesPDF.pdf',
@@ -56,7 +55,7 @@ def meme_rand():
 
 @app.route('/create', methods=['GET'])
 def meme_form():
-    """ User input for meme information """
+    # @TODO:
     return render_template('meme_form.html')
 
 
