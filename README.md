@@ -6,6 +6,8 @@ This is a silly dog meme generator written with Python and [Flask](https://flask
 
 I am currently exploring options where to deploy this, most likely Heroku, once it's ready I will add the link here 🧐
 
+![](resource/gif/demo.gif)
+
 ## Functionality
 
 Basic functionality of the application are as follows:
